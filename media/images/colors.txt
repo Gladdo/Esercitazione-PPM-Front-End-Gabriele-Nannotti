@@ -1,0 +1,2 @@
+image background: #97c9e8
+image text: #ededed

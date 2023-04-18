@@ -1,0 +1,231 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* NOTA: Di default il pop-menu è taggato off; quando si clicca sull'icona menu questo tag viene tolto e quindi il menu
+compare */
+.off{
+    display: none;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* CONTAINER GENERALE POP MENU */
+
+/* DESCRIZIONE: Il pop menu è centrato orizzontalmente nella pagina; inoltre si estende per tutto la finestra ma solo quando è
+sotto ai 1280 px */
+
+#pop-menu{
+    /* Layout properties */
+    top: 128px;
+    position: fixed;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    height: 500px;
+    width: 100%;
+    max-width: 1280px;
+
+    /* Style properties */
+    font-family: Arial, serif;
+    box-shadow: 0 0 6px -2px darkgray;
+    background-color: white;
+
+    /* Animation properties */
+    transition: top 0.5s;
+}
+
+/* NOTA: Quando il navbar è in squeeze, il pop menu deve muoversi in su (quindi passa da top 128px a top 63px). Il pixel
+ di margine l'ho lasciato per non nascondere il bottom-border del navbar */
+#pop-menu.squeeze{
+    top: 63px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* LAYOUT POP MENU */
+
+/* DESCRIZIONE: Il pop menu è diviso in due parti: la parte sinistra che contiene un menu flex e la parte destra che contiene un
+ menu grid. pop-menu-section-grid crea questa partizione. */
+
+#pop-menu-section-grid{
+    display: grid;
+    grid-template-columns: 0.65fr 0.35fr;
+}
+
+#pop-menu-left-grid{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+
+    max-height: 500px;
+}
+
+#pop-menu-right-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+
+    max-height: 500px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* ITEMS DEL POP MENU */
+
+/*----------------------------------------------*/
+/* Item grid di sinistra */
+
+.pop-menu-flex-item{
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+}
+
+.pop-menu-flex-item div{
+    display: flex;
+    flex-direction: column;
+    margin: 4px auto;
+    width: 215px;
+
+    font-size: 16px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* STYLE PROPERTIES */
+
+/*----------------------------------------------*/
+/* General properties */
+#pop-menu p{
+    margin: 0;
+    padding: 2px 19px;
+}
+
+#pop-menu a:link, #pop-menu a:visited, #pop-menu a:hover, #pop-menu a:visited{
+    color: black;
+}
+
+#pop-menu a:link, #pop-menu a:visited, #pop-menu a:visited {
+    text-decoration: none;
+}
+
+#pop-menu a:hover{
+    text-decoration: underline;
+}
+
+/*----------------------------------------------*/
+/* Left properties */
+#pop-menu-left-grid h4{
+    font-size: 17px;
+
+    border-bottom-color: lightgray;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+
+    padding: 12px 19px;
+    margin-bottom: 5px;
+}
+
+/*----------------------------------------------*/
+/* Right properties */
+#pop-menu-right-grid h4{
+    padding: 12px 0;
+}
+
+#pop-menu-right-grid h4{
+    font-size: 17px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* Meida queries */
+
+/*----------------------------------------------*/
+/* 600 - 1280 */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+
+    /*----------------------------------------------*/
+    /* General Layout changes */
+    #pop-menu{
+        overflow-y: scroll;
+        height: calc(100vh - 67px);
+    }
+
+    #pop-menu-section-grid{
+        grid-template-columns: 1fr;
+    }
+
+    #pop-menu-left-grid{
+        max-height: 900px;
+    }
+
+    /*----------------------------------------------*/
+    /* Items Layout changes */
+    .pop-menu-flex-item{
+        width:50%;
+    }
+
+    .pop-menu-grid-item div{
+        width: 215px;
+        margin: 0 auto;
+    }
+
+    /*----------------------------------------------*/
+    /* Other changes */
+    #pop-menu-left-grid h4{
+        padding: 12px 0;
+    }
+
+    #pop-menu p{
+        padding: 2px 0;
+    }
+
+    #pop-menu-right-grid h4{
+        padding-bottom: 8px;
+    }
+}
+
+/*----------------------------------------------*/
+/* < 600 */
+@media only screen and (max-width: 600px) {
+
+    /*----------------------------------------------*/
+    /* General Layout changes */
+    #pop-menu{
+        overflow-y: scroll;
+        height: calc(100vh - 67px);
+    }
+
+    #pop-menu-section-grid{
+        grid-template-columns: 1fr;
+    }
+
+    #pop-menu-left-grid{
+        max-height: none;
+    }
+
+    /*----------------------------------------------*/
+    /* Items Layout changes */
+    .pop-menu-flex-item{
+        width:100%;
+    }
+
+    .pop-menu-flex-item div{
+        width:100%;
+        margin: 4px 0;
+    }
+
+    .pop-menu-grid-item div{
+        padding-left: 20px;
+    }
+
+    /*----------------------------------------------*/
+    /* Other changes */
+    #pop-menu-right-grid p{
+        padding: 2px 0;
+    }
+
+    #pop-menu-right-grid h4{
+        padding-bottom: 8px;
+    }
+
+}
+
+
+
+

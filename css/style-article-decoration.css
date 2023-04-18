@@ -1,0 +1,133 @@
+/*------------------------------------------*/
+/* Article decorations */
+
+.article-decoration{
+    font-size: 18px;
+}
+
+.article-decoration h1{
+    font-size: 36px;
+    line-height: 0.8em;
+    font-weight: bolder;
+}
+
+.article-decoration h2{
+    font-size: 30px;
+    line-height: 0.8em;
+    font-weight: bolder;
+}
+
+.article-decoration h3{
+    font-size: 25px;
+    line-height: 0.8em;
+    font-weight: bolder;
+}
+
+.article-decoration .short-description{
+    font-size: 18px;
+    color: #5a6268;
+    font-weight: 540;
+}
+
+.article-decoration .big-short-description{
+    font-size: 22px;
+    color: #5a6268;
+    font-weight: 540;
+}
+
+.article-decoration .authors{
+    font-family: Arial, serif;
+    font-size: 1em;
+}
+
+/* Links */
+
+.article-decoration a:hover, .article-decoration a:visited, .article-decoration a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.article-decoration a:hover{
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* Lists */
+
+.article-decoration ul{
+    padding-left: 20px;
+}
+
+.article-decoration ul li {
+    font-size: 1.4em;
+    color: dodgerblue;
+    font-weight: normal;
+    line-height: 18px;
+    margin-bottom: 14px;
+    padding-left: 8px;
+}
+
+.article-decoration ul li a:link, .article-decoration ul li a:visited{
+    color: black;
+    font-size: 17px;
+}
+
+.article-decoration ul li a:hover{
+    color: #007bff;
+    cursor: pointer;
+}
+
+.article-decoration.bottom-separator{
+    border-bottom-style: solid;
+    border-bottom-color: lightgray;
+    border-bottom-width: thin;
+    width:100%;
+
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+.article-decoration.bottom-separator.xsm-enable-border{
+    border-style: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.article-decoration.bottom-separator.sm-enable-border{
+    border-style: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* Per far si che un header di un'article si ridimensioni con lo screen size, aggiungere all'header il tag .smart-h*/
+
+@media only screen and (max-width: 1024px) {
+    .article-decoration .smart-h1{
+        font-size: 26px;
+    }
+
+    .article-decoration .smart-h2{
+        font-size: 23px;
+    }
+
+    .article-decoration .smart-h3{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 765px){
+    .article-decoration.bottom-separator.sm-enable-border{
+        border-bottom-style: solid;
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .article-decoration.bottom-separator.xsm-enable-border{
+        border-bottom-style: solid;
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+    }
+}

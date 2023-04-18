@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title Placeholder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" href="external-tools/css/bootstrap.css"> -->
+    <!--<script src="external-tools/js/jquery-3.6.4.js"></script> -->
+    <!-- <script src="external-tools/js/bootstrap.js"></script> -->
+    <link rel="stylesheet" href="css/style-navbar.css">
+    <link rel="stylesheet" href="css/style-navbar-buttons-container.css">
+    <link rel="stylesheet" href="css/style-pop-menu.css">
+    <link rel="stylesheet" href="css/style-article-decoration.css">
+    <link rel="stylesheet" href="css/style-article-layout.css">
+    <link rel="stylesheet" href="css/style-footer.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="media/images/icon.png">
+
+    <script src="js/script.js"></script>
+<!-- TODO:
+ Fare la seconda sezione: è un grid di due div verticali; il primo contiene un article con descrizione. L'altro
+ contiene un'altra grid orizzontale a sua volta risuddivisa in due TITOLI di article vertivali
+ Quando si strizza, tutte ste cose vanno in cascata
+
+ Fare il footer
+
+ Ultimare media queries (in particolare per mobile!!!)
+
+ Fare il menu / finire tasto user e menu
+
+ Risistemare i box-article usando containers per le varie cose?
+
+ -----------------------------
+ Giovedì:
+    - finire per forza la pagina: mid, bot e footer
+ Venerdì:
+    - finire footer
+    - Fare le media query medium-horizontal-to-vertical e small-horizontal-to-vertical
+    - fare le media query per mobile
+    - finire menu top
+        > va messo i bottoni e il menu overlay
+        > va messo il titolo che si restringe ulteriormente per visualizzazione mobile
+    - finire media query: manca il layout di quando lo schermo è da mobile (per ora cè solo schermo grande, schermo
+    medio e schermo piccolo: >1280, 765 < X < 1280, X <765. Va fatto il X < 400)
+
+    - Mettere icona corretta
+
+    poi refactoring generale: Risistemare i nomi dei layout, mettere i nomi del layout pure nell'html (così da dare
+    identità ai vari elementi e vedere effettivamente cosa fanno quei rispettivi oggetti css)
+
+ -----------------------------
+ TODO:
+    - Mettere il signup button
+    - Mettere il footer
+    - Refactoring
+    - Aggiungere eventualmente altre sections
+  -----------------------------
+  TODO:
+    - Sistemare vertical e horizontal layout: mettere solo due tipi, horizontal e vertical; quindi metti modificatori css
+    tipo .horizontal .split con split che imposta il layout 0.5fr e 0.5fr e .horizontal .inverse con inverse che sovrascrive
+    l'order dei div nell'article
+    - Quindi sistema i tag per switchare tra horizontal e vertical layout
+    - Fai poi uno script separato per modificare l'immagine nel wrapper: i wrapper con "resize-<size>" avranno l'immagine
+    modificata con lo specifico size quando lo schermo si rimpicciolisce! (infatti ci sono immagini che da 16:9 diventano
+    quadrate!
+    - Poi rivedi il file "style" e rinomina le varie sezioni in modo più consono
+
+TODO:
+    -correggi THE LATEST FONT
+    - metti le immagini che si resizano: è da sotto i 765 che deve essere modificata la resolution di alcune img, e poi
+    si mantengono pure per sotto i 600
+
+-----------------------------
+TODO:
+    X- FIX footer
+    X- >>> FIX title quando si restringe
+    X- >>> Sistemare l'user login
+    - > Sistemare i font e le short description
+    - Sistemare il padding delle immagini dei layout orizzontali
+    - >> Riordina le proprietà dei css nel style.css
+    X- >> riordina footer.css
+    - > Aggiungere altri layout?
+    X- > Commentare file JS
+    X- > Sistemare i banners (quando si è su mobile)
+    - Migliorare le descrizioni dei layout
+    X- >>>>>> mettere icona sito
+    X- make images as a link
+    X- Commenta html navbar
+
+ TODO: tests:
+    - Apertura della pagina già in dimensioni small e xsmall
+
+ -->
+</head>
+<body>
+    <header>
+
+        <!-- Navbar -->
+
+        <nav id="navbar">
+            <div id="navbar-container">
+
+                <!-- Navbar Riga Superiore-->
+
+                <div id="navbar-first-row">
+
+                    <!-- Data -->
+
+                    <div id="navbar-data-container">
+                        <p id="navbar-data"></p>
+                        <a href="#"> Today's paper </a>
+                    </div>
+
+                    <!-- Logo -->
+
+                    <div id="navbar-logo-container">
+                        <a href="#" class="image-link"><img id="logo-image" src="media/images/title-place-holder.svg"></a>
+                        <a href="#" class="image-link"><img id="small-logo-image" src="media/images/small-title-place-holder.svg"></a>
+                    </div>
+
+                    <!-- User buttons -->
+
+                    <div id="navbar-user-container">
+                        <div>
+                            <a href="#"> <p id="user-sign-in"> SIGN IN </p> </a>
+                            <a href="#"> <div id="user-subscribe-container"> <p id="user-sign-up"> S U B S C R I B E </p> <p id="user-price"> price </p> </div></a>
+                            <a href="#"> <p id="user-sign-up-small"> SIGN UP </p> </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navbar Riga inferiore -->
+
+                <div id="navbar-second-row">
+
+                    <!-- Menu Buttons -->
+
+                    <div id="navbar-buttons-container">
+                        <div id="menu-icon">
+                            <div id="bar1"></div>
+                            <div id="bar2"></div>
+                            <div id="bar3"></div>
+                        </div>
+                        <div id="search-icon">
+                            <img src="media/images/search-icon.PNG">
+                        </div>
+                    </div>
+
+                    <!-- Topic list -->
+
+                    <div id="navbar-topics-container">
+                        <a href="#">News</a>
+                        <a href="#">Sports</a>
+                        <a href="#"> Betting</a>
+                        <a href="#"> Business</a>
+                        <a href="#"> Opinion</a>
+                        <a href="#">Politics</a>
+                        <a href="#">Entertainment</a>
+                        <a href="#">Life</a>
+                        <a href="#"> Food</a>
+                        <a href="#">Health</a>
+                        <a href="#">Real Estate</a>
+                        <a href="#"> Obituaries</a>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Pop Menu -->
+
+        <div id="pop-menu" class="off">
+            <div id="pop-menu-container">
+
+                <!-- Pop Menu Parte sinistra -->
+
+                <div id="pop-menu-section-grid">
+                    <div id="pop-menu-left-grid">
+                        <div class="pop-menu-flex-item">
+                            <div>
+                                <h4><a href="#"> FLEX ITEM 1 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-flex-item">
+                            <div>
+                                <h4><a href="#"> FLEX ITEM 2 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-flex-item">
+                            <div>
+                                <h4><a href="#"> FLEX ITEM 3 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-flex-item">
+                            <div>
+                            <h4><a href="#"> FLEX ITEM 4 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-flex-item">
+                            <div>
+                            <h4><a href="#"> FLEX ITEM 5 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-flex-item">
+                            <div>
+                                <h4><a href="#"> FLEX ITEM 6 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-flex-item">
+                            <div>
+                                <h4><a href="#"> FLEX ITEM 7 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-flex-item">
+                            <div>
+                                <h4><a href="#"> FLEX ITEM 8 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-flex-item">
+                            <div>
+                                <h4><a href="#"> FLEX ITEM 9 </a></h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pop Menu Parte destra -->
+
+                    <div id="pop-menu-right-grid">
+                        <div class="pop-menu-grid-item">
+                            <div>
+                                <h4> GRID ITEM 1 </h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-grid-item">
+                            <div>
+                                <h4> GRID ITEM 2 </h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-grid-item">
+                            <div >
+                                <h4> GRID ITEM 3 </h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                        <div class="pop-menu-grid-item">
+                            <div>
+                                <h4> GRID ITEM 4 </h4>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Entry </a> </p>
+                                <p> <a href="#"> Last Entry </a> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <main>
+
+        <!-- Page Top -->
+
+        <div class="banner-container">
+            <a href="#"> <img src="media/images/advertisement-small.png"> </a>
+        </div>
+        <div id="layout-top">
+
+            <!-- Page Top First column -->
+
+            <div>
+                <article class="vertical-article-layout article-decoration">
+                    <div>
+                        <div class="image-wrapper">
+                            <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                        </div>
+                        <h1> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h1>
+                        <p class="short-description"> <a href="#"> Short description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. Vestibulum vestibulum felis sit amet augue sollicitudin, at elementum neque rhoncus. Pellentesque sed egestas ex. </a> </p>
+                        <p class="authors"> <a href="#"> Author1 </a>, <a href="#"> Author2 </a>, and <a href="#"> Author3</a> </p>
+                        <ul class="related-articles">
+                            <li> <a href="#"> Related Article1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#">Related Article2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#">Related Article3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Page Top Second column  -->
+
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator">
+                    <div>
+                        <div class="image-wrapper">
+                            <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                        </div>
+                        <h2> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h2>
+                        <p class="short-description"> <a href="#"> Short description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. Vestibulum vestibulum felis sit amet augue sollicitudin, at elementum neque rhoncus. Pellentesque sed egestas ex. </a> </p>
+                        <p class="authors"> <a href="#"> Author1 </a>, <a href="#"> Author2 </a>, and <a href="#"> Author3</a> </p>
+                        <ul class="related-articles">
+                            <li> <a href="#"> Related Article1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="vertical-article-layout article-decoration">
+                    <h2> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h2>
+                    <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2</a> </p>
+                </article>
+            </div>
+
+            <!-- Page Top Latest news column  -->
+
+            <div id="latest-news" class="article-decoration">
+                <article>
+                    <div>
+                        <h1> THE LATEST </h1>
+                        <ul class="latest-news">
+                            <li> <a href="#"> Latest new: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#"> Latest new: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#"> Latest new: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#"> Latest new: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#"> Latest new: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#"> Latest new: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#"> Latest new: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                            <li> <a href="#"> Latest new: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="banner-container">
+            <p> ADVERTISEMENT </p>
+            <a href="#" class="image-link"><img src="media/images/advertisement-small.png"></a>
+        </div>
+
+        <!-- Section Header 1 -->
+
+        <div class="section-header">
+            <h1> <a href="#"> SECTION TITLE: LAYOUT A E LAYOUT B </a> </h1>
+            <div>
+                <a href="#">More</a>
+                <img src="media/images/right-arrow.PNG">
+            </div>
+        </div>
+
+        <!-- Layout A -->
+
+        <div class="layout-A">
+
+            <!-- Layout A First row -->
+
+            <div class="xsm_set_articles_vertical">
+                <article class="horizontal-article-layout article-decoration bottom-separator">
+                    <div>
+                        <h1 class="smart-h1"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h1>
+                        <p class="short-description"> <a href="#"> Short description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. Vestibulum vestibulum felis sit amet augue sollicitudin, at elementum neque rhoncus. Pellentesque sed egestas ex. </a> </p>
+                        <p class="authors"> <a href="#"> Author1 </a> </p>
+                    </div>
+                    <div class="image-wrapper">
+                        <a href="#" class="image-link"><img src="media/images/article-image-500x333.png"></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Layout A Second row -->
+
+            <div class="layout-A-second-row">
+
+                <!-- Layout A Second row Left -->
+
+                <div class="layout-A-second-row-left">
+                    <article class="horizontal-article-layout article-decoration bottom-separator">
+                        <div>
+                            <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h3>
+                            <p class="authors"> <a href="#"> Author1 </a> </p>
+                        </div>
+                        <div class="image-wrapper">
+                            <a href="#" class="image-link"><img src="media/images/article-image-200x200.png"></a>
+                        </div>
+                    </article>
+                    <article class="horizontal-article-layout article-decoration bottom-separator sm-enable-border">
+                        <div>
+                            <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h3>
+                            <p class="authors"> <a href="#"> Author1 </a> </p>
+                        </div>
+                        <div class="image-wrapper">
+                            <a href="#" class="image-link"><img src="media/images/article-image-200x200.png"></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Layout A Second row Right -->
+
+                <div class="layout-A-second-row-right">
+                    <article class="horizontal-article-layout article-decoration bottom-separator">
+                        <div>
+                            <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h3>
+                            <p class="authors"> <a href="#"> Author1 </a> </p>
+                        </div>
+                        <div class="image-wrapper">
+                            <a href="#" class="image-link"><img src="media/images/article-image-200x200.png"></a>
+                        </div>
+                    </article>
+                    <article class="horizontal-article-layout article-decoration">
+                        <div>
+                            <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h3>
+                            <p class="authors"> <a href="#"> Author1 </a> </p>
+                        </div>
+                        <div class="image-wrapper">
+                            <a href="#" class="image-link"><img src="media/images/article-image-200x200.png"></a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Layout B -->
+
+        <div class="layout-B">
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator sm-enable-border">
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator sm-enable-border">
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator xsm-enable-border">
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration">
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="section-line-separator"></div>
+
+        <!-- Layout C -->
+
+        <div class="layout-C xsm_set_articles_vertical">
+            <article class="horizontal-article-layout split article-decoration">
+                <div>
+                    <h2> <a href="#"> Layout C: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a></h2>
+                    <p class="short-description"> <a href="#"> Short description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. Vestibulum vestibulum felis sit amet augue sollicitudin, at elementum neque rhoncus. Pellentesque sed egestas ex. </a> </p>
+                    <p class="authors"> <a href="#"> Author1 </a> </p>
+                    <ul class="related-articles">
+                        <li> <a href="#"> Related Article1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </a> </li>
+                    </ul>
+                </div>
+                <div class="image-wrapper">
+                    <a href="#" class="image-link"><img src="media/images/article-image-500x333.png"></a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Section Header 2 -->
+
+        <div class="section-header">
+            <h1><a href="#"> SECTION TITLE: LAYOUT D </a> </h1>
+            <div>
+                <a href="#">Sign Up</a>
+                <img src="media/images/right-arrow.PNG">
+            </div>
+            <p> Short description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. </p>
+        </div>
+
+        <!-- Layout D
+            - Sopra ai 765 sta tutto in un'unica row
+            - Sotto ai 765 sta tutto in un'unica column
+        -->
+
+        <div class="layout-D sm_set_articles_horizontal">
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator sm-enable-border">
+                    <div class="image-wrapper s-res_200x200 m-res_760x507">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator sm-enable-border">
+                    <div class="image-wrapper s-res_200x200 m-res_760x507">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator sm-enable-border">
+                    <div class="image-wrapper s-res_200x200 m-res_760x507">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration">
+                    <div class="image-wrapper s-res_200x200 m-res_760x507">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Section Header 3 -->
+
+        <div class="section-header">
+            <h1><a href="#"> SECTION TITLE: LAYOUT E </a> </h1>
+            <div>
+                <a href="#">More</a>
+                <img src="media/images/right-arrow.PNG">
+            </div>
+        </div>
+
+        <!-- Layout E -->
+
+        <div class="layout-E">
+            <div>
+                <article class="vertical-article-layout article-decoration">
+                    <div class="image-wrapper">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h2 class="smart-h2"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h2>
+                        <p class="short-description"> <a href="#"> Short description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget maximus diam. Vestibulum vestibulum felis sit amet augue sollicitudin, at elementum neque rhoncus. Pellentesque sed egestas ex. </a> </p>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <div class="invisible-line"></div>
+                <article class="horizontal-article-layout inverse-layout article-decoration bottom-separator">
+                    <div class="image-wrapper">
+                        <a href="#" class="image-link"><img src="media/images/article-image-500x333.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+                <article class="horizontal-article-layout inverse-layout article-decoration bottom-separator">
+                    <div class="image-wrapper">
+                        <a href="#" class="image-link"><img src="media/images/article-image-500x333.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+                <article class="horizontal-article-layout inverse-layout article-decoration bottom-separator">
+                    <div class="image-wrapper">
+                        <a href="#" class="image-link"><img src="media/images/article-image-500x333.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+                <article class="horizontal-article-layout inverse-layout article-decoration bottom-separator">
+                    <div class="image-wrapper">
+                        <a href="#" class="image-link"><img src="media/images/article-image-500x333.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Section Header 4 -->
+
+        <div class="section-header">
+            <h1><a href="#"> SECTION TITLE: LAYOUT B CON SWITCH DEGLI ARTICOLI </a> </h1>
+            <div>
+                <a href="#">Sign Up</a>
+                <img src="media/images/right-arrow.PNG">
+            </div>
+        </div>
+
+        <!-- Layout B con articoli che passano da essere verticali ad essere orizzontali
+        NB: layout B e D sono simili, ma il layout B ha una transizione intermedia del layout:
+            - Sopra ai 765 stanno in un'unica row
+            - Tra i 600 e i 765 stanno su due row in due colonne
+            - Sotto i 600 stanno in un'unica colonna
+         -->
+
+        <div class="layout-B sm_set_articles_horizontal">
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator sm-enable-border">
+                    <div class="image-wrapper s-res_200x200 m-res_760x507">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator sm-enable-border">
+                    <div class="image-wrapper s-res_200x200 m-res_760x507">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration bottom-separator xsm-enable-border">
+                    <div class="image-wrapper s-res_200x200 m-res_760x507">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="vertical-article-layout article-decoration">
+                    <div class="image-wrapper s-res_200x200 m-res_760x507">
+                        <a href="#" class="image-link"><img src="media/images/article-image-760x507.png"></a>
+                    </div>
+                    <div>
+                        <h3 class="smart-h3"> <a href="#"> Article header: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a></h3>
+                        <p class="authors"> <a href="#"> Author1 </a> and <a href="#"> Author2 </a> </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <!-- Footer navigation -->
+
+        <div id="footer-container">
+            <div id="footer-grid">
+                <div class="footer-item">
+                    <h4> HEADER </h4>
+                    <div class="footer-entry-box">
+                        <div>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <h4> HEADER </h4>
+                    <div class="footer-entry-box">
+                        <div>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                        </div>
+                        <div>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <h4> HEADER </h4>
+                    <div class="footer-entry-box">
+                        <div>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                        </div>
+                        <div>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <h4> HEADER </h4>
+                    <div class="footer-entry-box">
+                        <div>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                        </div>
+                        <div>
+                            <a href="#">Entry</a>
+                            <a href="#">Entry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer external links -->
+
+        <div id="footer-bottom">
+            <div id="footer-bottom-container">
+                <div id="footer-bottom-flex">
+                    <div id="footer-bottom-links-container">
+                        <p> <a href="#"> © Copyright stuff </a> </p>
+                        <p> <a href="#"> External link1 </a>/ <a href="#"> External link1 </a> / <a href="#"> External link1 </a> /<a href="#"> External link1 </a></p>
+                    </div>
+                   <div id="footer-social-container">
+                       <a href="#" class="image-link"><img src="media/images/twitter-logo.png"></a>
+                       <a href="#" class="image-link"><img src="media/images/facebook-logo.png"></a>
+                       <a href="#" class="image-link"><img src="media/images/instagram-logo.png"></a>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

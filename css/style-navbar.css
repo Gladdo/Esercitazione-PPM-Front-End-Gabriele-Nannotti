@@ -1,0 +1,302 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* Nabar properties */
+
+/*----------------------------------------------*/
+/* Navbar */
+
+#navbar *{
+    transition: 0.5s ease-in-out all;
+
+}
+
+#navbar {
+    /* Layout properties */
+    width: 100%;
+    height: 127px;
+    min-width: 300px;
+    position: fixed;
+
+    /* Style properties */
+    background: white;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: darkgray;
+
+    /* Animation properties */
+    transition: 0.5s ease-in-out height;
+}
+
+#navbar-container{
+    /* Layout properties */
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*----------------------------------------------*/
+/* Navbar rows properties */
+
+#navbar-first-row{
+    /* Layout properties */
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: 1fr 1.4fr 1fr;
+
+    height: 62px;
+    padding-top: 13px;
+
+    /* Animation properties */
+    transition: 0.5s ease-in-out all;
+}
+
+#navbar-second-row {
+    /* Layout properties */
+    display: grid;
+    grid-template-columns: 1.5fr 8fr 1.5fr;
+
+    height: 52px;
+
+    /* Animation properties */
+    transition: 0.5s ease-in-out all;
+}
+
+/*----------------------------------------------*/
+/* First row elements */
+
+/*------------------------*/
+/* Data */
+#navbar-data-container{
+    /* Layout properties */
+    height: 36px;
+    margin: auto 0;
+    padding-left: 12px;
+
+    /* Style properties */
+    font-family: "Arial","Times New Roman", serif;
+    font-size: 0.75em;
+
+    /* Animation properties */
+    transition: opacity .25s ease-in-out;
+}
+
+#navbar-data-container p {
+    margin-bottom: 4px;
+}
+
+#navbar-data-container a:link, #navbar-data-container a:visited, #navbar-data-container a:hover,
+#navbar-data-container a:active
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+/*------------------------*/
+/* Logo */
+#navbar-logo-container{
+    height: inherit;
+}
+
+#navbar-logo-container img{
+    height: 100%;
+    margin: 0 auto;
+}
+
+#logo-image{
+    display: block;
+}
+
+#small-logo-image{
+    display: none;
+}
+
+/*------------------------*/
+/* User */
+#navbar-user-container{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 15px;
+
+    font-family: Arial, serif;
+    z-index: 2;
+}
+
+#navbar-user-container a:link, #navbar-user-container a:visited, #navbar-user-container a:hover,
+#navbar-user-container a:active{
+    text-decoration: none;
+    color:black;
+}
+
+#navbar-user-container > div{
+    float:right;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 12px;
+}
+
+#user-subscribe-container{
+    background-color: #17a2b8;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding:10px 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-sign-in{
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#user-sign-up-small{
+    display:none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*----------------------------------------------*/
+/* Second row elements */
+
+/* Per navbar-buttons-container guarda file apposito */
+
+/*------------------------*/
+/* Topics */
+#navbar-topics-container{
+    /* Layout properties */
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+    justify-content: center;
+    gap: 20px;
+
+    height: 16px;
+    min-height: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    /* Style properties */
+    font-family: Arial, serif;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: lighter;
+
+    /* Animation properties */
+    transition: opacity .25s ease-in-out;
+
+}
+
+#navbar-topics-container a:link, #navbar-topics-container a:hover,
+#navbar-topics-container a:visited{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* Squeezed navbar properties */
+
+/*----------------------------------------------*/
+/* General layout changes */
+#navbar.squeeze {
+    height: 62px;
+}
+
+#navbar.squeeze #navbar-first-row {
+    padding-top: 0;
+}
+
+#navbar.squeeze #navbar-second-row {
+    margin-top: -62px;
+    height: 62px;
+}
+
+/*----------------------------------------------*/
+/* Elements changes */
+
+#navbar.squeeze #navbar-logo-container{
+    margin-top: 12px;
+    height: 34px;
+}
+
+#navbar.squeeze #navbar-data-container{
+    opacity: 0;
+    font-size: 0;
+    transition: font-size 0.01s 0.5s, opacity 0.5s ;
+
+    z-index: -1;
+}
+
+#navbar.squeeze #navbar-topics-container{
+    opacity: 0;
+}
+
+#navbar.squeeze #user-price{
+    opacity: 0;
+    font-size: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* Media query */
+
+@media only screen and (max-width: 1024px) {
+    #navbar {
+        border-width: medium;
+        border-color: black;
+    }
+
+    #navbar-second-row{
+        grid-template-columns: 1fr 0.1fr 1fr;
+        height: 62px;
+    }
+
+    #navbar-user-container > div{
+        column-gap: 0;
+    }
+
+    #user-sign-in{
+        text-decoration: none;
+    }
+
+    #user-sign-in:after{
+        content: "/";
+    }
+
+    #user-subscribe-container{
+        display: none;
+    }
+
+    #user-sign-up-small{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #logo-image{
+        display: none;
+    }
+
+    #small-logo-image{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    #navbar-user-container > div{
+        flex-direction: column;
+    }
+}

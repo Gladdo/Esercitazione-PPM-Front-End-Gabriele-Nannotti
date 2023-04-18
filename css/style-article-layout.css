@@ -1,0 +1,72 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* VERTICAL LAYOUT */
+
+.vertical-article-layout{
+    display: grid;
+    grid-row-gap: 14px;
+    grid-template-columns: 1fr;
+
+    font-family: "Times New Roman", serif;
+}
+
+.vertical-article-layout div{
+    display: flex;
+    row-gap: 14px;
+    flex-direction: column;
+}
+
+.vertical-article-layout img{
+    width:100%;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* HORIZONTAL LAYOUT */
+
+/*------------------------------------------*/
+/* Horizontal 0.715 0.285 */
+
+.horizontal-article-layout{
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr ;
+}
+
+.horizontal-article-layout div{
+    display: flex;
+    row-gap: 14px;
+    flex-direction: column;
+}
+
+.horizontal-article-layout img{
+    width: 100%;
+}
+
+/* il padding dipende dal font size dell'articolo (rem) */
+.horizontal-article-layout .image-wrapper{
+    padding-left: 1.25rem;
+}
+
+.horizontal-article-layout.inverse-layout{
+    grid-template-columns: 0.3fr 0.7fr;
+}
+
+.horizontal-article-layout.inverse-layout .image-wrapper{
+    padding-left: 0;
+    padding-right: 1.25rem;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/* Horizontal layout */
+
+@media only screen and (max-width: 1024px) {
+    .horizontal-article-layout.split{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .vertical-article-layout .image-wrapper{
+        margin-right: -20px;
+        margin-left: -20px;
+        order: -1;
+    }
+}
