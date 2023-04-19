@@ -124,7 +124,7 @@ function menuClickCallback(){
 }
 
 /* -------------------------------*/
-/* Impostazione data */
+/* Document load setup */
 
 const weekday = [ "Sunday", "Monday" , "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] ;
 const month = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
@@ -139,8 +139,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const date = new Date();
     data_text.innerText = weekday[date.getDay()] + ", " + month[date.getMonth()] + " " +date.getDate() + ", " + date.getFullYear();
 
+    /* -------------------------------*/
+    /* Load the right query layout */
     mediumMediaQuery(medium_media_query);
     smallMediaQuery(small_media_query);
+    extrasmallMediaQuery((extra_small_media_query));
 
     /* -------------------------------*/
     /* Setup menu click event listener */

@@ -2,42 +2,58 @@
 /* Article decorations */
 
 .article-decoration{
+    /* Font size da cui derivano tutti i font size degli articoli, compresi i padding delle immagini nei layout
+     orizzontali (em units):*/
     font-size: 18px;
+    font-family: "Open Sans", serif;
 }
 
 .article-decoration h1{
-    font-size: 36px;
-    line-height: 0.8em;
-    font-weight: bolder;
+    font-size: 1.6em;
+    line-height: 1em;
+    font-weight: bold;
 }
 
 .article-decoration h2{
-    font-size: 30px;
-    line-height: 0.8em;
-    font-weight: bolder;
+    font-size: 1.5em;
+    line-height: 0.9em;
+    font-weight: bold;
 }
 
 .article-decoration h3{
-    font-size: 25px;
-    line-height: 0.8em;
+    font-size: 1.2em;
+    line-height: 1em;
     font-weight: bolder;
 }
 
-.article-decoration .short-description{
-    font-size: 18px;
+.article-decoration .p2{
+    font-family: Times, serif;
+    font-size: 1em;
+    line-height: 1.1em;
     color: #5a6268;
-    font-weight: 540;
+    font-weight: normal;
 }
 
-.article-decoration .big-short-description{
-    font-size: 22px;
+.article-decoration .p1{
+    font-family: Times, serif;
+    font-size: 1.2em;
+    line-height: 1.1em;
     color: #5a6268;
-    font-weight: 540;
+    font-weight: normal;
+}
+
+.article-decoration .p3{
+    font-family: Times, serif;
+    font-size: 1em;
+    line-height: 1.1em;
+    color: #5a6268;
+    font-weight: normal;
 }
 
 .article-decoration .authors{
-    font-family: Arial, serif;
-    font-size: 1em;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-top: 2px;
 }
 
 /* Links */
@@ -59,17 +75,16 @@
 }
 
 .article-decoration ul li {
-    font-size: 1.4em;
+    font-size: 1em;
     color: dodgerblue;
     font-weight: normal;
-    line-height: 18px;
+    line-height: 1em;
     margin-bottom: 14px;
     padding-left: 8px;
 }
 
 .article-decoration ul li a:link, .article-decoration ul li a:visited{
     color: black;
-    font-size: 17px;
 }
 
 .article-decoration ul li a:hover{
@@ -104,15 +119,15 @@
 
 @media only screen and (max-width: 1024px) {
     .article-decoration .smart-h1{
-        font-size: 26px;
+        font-size: 1.5em;
     }
 
     .article-decoration .smart-h2{
-        font-size: 23px;
+        font-size: 1.4em;
     }
 
     .article-decoration .smart-h3{
-        font-size: 20px;
+        font-size: 1.0em;
     }
 }
 
@@ -129,5 +144,13 @@
         border-bottom-style: solid;
         margin-bottom: 16px;
         padding-bottom: 10px;
+    }
+
+    .article-decoration .p3{
+        font-size: 0.9em;
+    }
+
+    .article-decoration .p1{
+        font-size: 1.1em;
     }
 }

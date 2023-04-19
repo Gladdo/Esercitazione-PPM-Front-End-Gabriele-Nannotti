@@ -105,7 +105,7 @@ main{
 
 #latest-news h1{
     font-family: Arial,serif;
-    font-size: 30px;
+    font-size: 1.6em;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -126,13 +126,18 @@ main{
     border-top-width: medium;
 
     font-family: Arial, serif;
+
+    font-size: 18px;
 }
 
 .section-header p{
-    font-family: "Times New Roman", serif;
-    font-size: 20px;
     color: #5a6268;
     padding-top: 12px;
+    font-family: Times, serif;
+    font-size: 1.2em;
+    line-height: 1.1em;
+    font-weight: normal;
+
 }
 
 .section-header h1{
@@ -324,6 +329,10 @@ main{
 
     #latest-news{
         grid-column: 1 / 2;
+    }
+
+    #latest-news h1{
+        font-size: 1.3em;
     }
 
     .layout-B{

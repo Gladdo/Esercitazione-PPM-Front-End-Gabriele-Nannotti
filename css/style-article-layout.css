@@ -5,8 +5,6 @@
     display: grid;
     grid-row-gap: 14px;
     grid-template-columns: 1fr;
-
-    font-family: "Times New Roman", serif;
 }
 
 .vertical-article-layout div{
@@ -42,7 +40,7 @@
 
 /* il padding dipende dal font size dell'articolo (rem) */
 .horizontal-article-layout .image-wrapper{
-    padding-left: 1.25rem;
+    padding-left: 1.7em;
 }
 
 .horizontal-article-layout.inverse-layout{
@@ -51,7 +49,7 @@
 
 .horizontal-article-layout.inverse-layout .image-wrapper{
     padding-left: 0;
-    padding-right: 1.25rem;
+    padding-right: 1.7em;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -68,5 +66,13 @@
         margin-right: -20px;
         margin-left: -20px;
         order: -1;
+    }
+
+    .horizontal-article-layout .image-wrapper{
+        padding-left: 1.3em;
+    }
+
+    .horizontal-article-layout.inverse-layout .image-wrapper{
+        padding-right: 1.3em;
     }
 }
