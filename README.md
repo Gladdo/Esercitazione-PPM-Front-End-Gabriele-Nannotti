@@ -34,17 +34,26 @@ A livello di classi css sono concepiti solo due tipi di articoli:
 - articoli orizzontali (associato alla classe css horizontal-article-layout) 
 - articoli verticali (associato alla classe css vertical-article-layout).
 
+#### Distinzione tra articoli con layout orizzontale con immagine a destra e immagine a sinistra:
+
 Per distringuere tra articoli orizzontali con immagine a destra e con immagine a sinistra, di default è previsto che un article con classe "horizontal-article-layout" abbia immagine a destra; aggiungendo a tale article la classe "inverse-layout", questa sovrascrive le proprietà di griglia css dell'"horizontal-article-layout" e impagina l'articolo in modo tale che sia conforme con l'immagine a sinistra.
+
+#### Cambio di orientamento da verticale a orizzontale e viceversa:
 
 Per modificare l'orientamento degli articoli da verticale a orizzontale e viceversa, alle diverse risoluzioni, viene utilizzato javascript; in particolare il meccanismo implementato è il seguente:
 
 Come prima cosa, sono rese disponibili le seguenti classi:
-xsm_set_articles_vertical
-sm_set_articles_horizontal
+- xsm_set_articles_vertical
+- sm_set_articles_horizontal
 
-Quindi succede questo: Se si associa la classe xsm_set_articles_vertical a un div , quando la risoluzione diventa xsm (<600px), gli articoli con classe "horizontal-article-layout" contenuti in tale div si vedono tale classe rimossa e sostituita con la classe "vertical-article-layout".
+Quindi succede questo:  
+Se si associa la classe "xsm_set_articles_vertical" a un div , quando la risoluzione dello schermo diventa xsm ( ovvero minore di 600px), gli articoli con classe "horizontal-article-layout" CONTENUTI IN TALE DIV si vedono tale classe rimossa e sostituita con la classe "vertical-article-layout".  
+Questo passaggio viene effettuato al contrario quando si torna sopra i 600px.  
 
-(Lo script.js è strutturato in modo tale che sia possibile estendere questo set di comandi dove necessario)
+La classe "sm_set_articles_horizontal" fa invece il contrario ovvero converte gli articoli da verticali a orizzontali quando si passa sotto alla risolizione sm (768px).  
 
+(Lo script.js è strutturato in modo tale che sia possibile estendere facilmente questo set di comandi dove necessario)  
+
+Infine, per far si che gli articoli orizzontali con immagine a destra, trasformati in verticali, si ritrovino l'immagine all'inizio dell'articolo una volta trasformati, le image-wrapper dei vertical-article-layout per risoluzioni < 600px hanno la proprietà css "order:-1".
 
 
