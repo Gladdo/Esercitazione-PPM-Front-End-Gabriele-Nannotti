@@ -58,7 +58,7 @@
 
 /* Links */
 
-.article-decoration a:hover, .article-decoration a:visited, .article-decoration a:link {
+.article-decoration a:link, .article-decoration a:visited, .article-decoration a:hover, .article-decoration a:active  {
     text-decoration: none;
     color: inherit;
 }

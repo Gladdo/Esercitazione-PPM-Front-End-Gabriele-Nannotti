@@ -16,6 +16,7 @@
 }
 
 #navbar {
+	z-index: 2;
     /* Layout properties */
     width: 100%;
     height: 127px;

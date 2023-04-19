@@ -11,6 +11,7 @@ compare */
 sotto ai 1280 px */
 
 #pop-menu{
+	z-index: 2;
     /* Layout properties */
     top: 128px;
     position: fixed;
