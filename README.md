@@ -1,6 +1,6 @@
 # Esercitazione-PPM-Front-End-Gabriele-Nannotti
 
-Piccolo riassunto sull'organizzazione dei files e delucidazioni su alcuni punti chiave.
+Piccolo riassunto sull'organizzazione dei files e delucidazioni su alcuni punti chiave dell'esercitazione.
 
 ## HTML
 A livello macroscopico la pagina html è suddivisa nelle classiche 3 parti: header, main e footer.
