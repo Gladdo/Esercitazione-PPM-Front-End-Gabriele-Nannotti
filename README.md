@@ -72,4 +72,29 @@ La classe "sm_set_articles_horizontal" fa invece il contrario ovvero converte gl
 
 Infine, per far si che gli articoli orizzontali con immagine a destra, trasformati in verticali, si ritrovino l'immagine all'inizio dell'articolo una volta verticalizzati, le image-wrapper dei vertical-article-layout per risoluzioni < 600px hanno la proprietà css "order:-1". In questo modo ogni articolo verticale avrà l'immagine posizionata all'inizio, a prescindere di come questa sia posizionata nel codice html.
 
+## Layouts
+<img src="" height="200">  
+
+#### Layout Top
+
+| (res>1024) | (1024>res>600)| (600>res)|
+| --- | --- | --- |
+| <img src="https://user-images.githubusercontent.com/94845303/233175507-3e1bda1c-7c97-42c2-9e44-3524a4eea75d.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233176228-3a5414c4-0423-4e11-8489-ace9bd950c81.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233177134-120c5ce1-8fc3-4307-8feb-faa71869c540.png" height="200"> |
+
+#### Layout A
+
+| (res>768) | (768>res>600)| (600>res)|
+| --- | --- | --- |
+<img src="https://user-images.githubusercontent.com/94845303/233177939-3583e41e-dcfa-4d34-878c-c42d9cbc2f48.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233178787-851242a0-ece9-41bf-805b-3aef80b87ec3.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233179085-876c36da-88eb-4885-a177-a690f8de8c75.png" height="200">
+
+
+
+
+
+
+
+
+
+
+
 
