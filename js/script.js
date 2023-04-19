@@ -71,6 +71,7 @@ function extrasmallMediaQuery(extra_small_query){
     if (extra_small_query.matches){
         /* Quando si passa sotto i 600 */
         switchClassTag("xsm_set_articles_vertical", "horizontal-article-layout", "vertical-article-layout");
+		switchClassTag("sm_set_articles_horizontal", "vertical-article-layout", "horizontal-article-layout inverse-layout" );
 		setAllBannerImagesMobile();
 		
 		navbar.classList.add("squeeze");
