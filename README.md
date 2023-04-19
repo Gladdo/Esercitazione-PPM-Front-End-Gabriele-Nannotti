@@ -2,6 +2,8 @@
 
 Piccolo riassunto sull'organizzazione dei files e delucidazioni su alcuni punti chiave dell'esercitazione.
 
+ATTENZIONE: Due div della pagina vengono rimossi da adblock (quelli che simulano i banner); per visualizzare correttamente la pagina va disabilitato!
+
 ## HTML
 A livello macroscopico la pagina html è suddivisa nelle classiche 3 parti: header, main e footer.
 
