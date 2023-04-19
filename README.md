@@ -87,7 +87,13 @@ Infine, per far si che gli articoli orizzontali con immagine a destra, trasforma
 | --- | --- | --- |
 <img src="https://user-images.githubusercontent.com/94845303/233177939-3583e41e-dcfa-4d34-878c-c42d9cbc2f48.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233178787-851242a0-ece9-41bf-805b-3aef80b87ec3.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233179085-876c36da-88eb-4885-a177-a690f8de8c75.png" height="200">
 
+#### Layout B (Con immmagini)
 
+| (res>768) | (768>res>600)| (600>res)|
+| --- | --- | --- |
+| <img src="https://user-images.githubusercontent.com/94845303/233179864-4aa764f5-5bdb-47d4-aa91-e9ded924906a.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233180041-252acacd-eb21-48fe-b46d-8c03f5130522.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233180139-20aa050b-6b6a-457c-9f76-ef227f1d2d35.png" height="200"> |
+
+In questo layout, nel passaggio da res>768 a res<768, tramite javascript agli articoli viene sostituito la classe vertical-article-layout con horizontal-article-layout. 
 
 
 
