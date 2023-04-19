@@ -39,6 +39,31 @@ function setImagesResolutions(res_command){
     }
 }
 
+function setAllBannerImagesMobile(){
+	const banner_containers = document.getElementsByClassName("banner-container");
+	for(let banner of banner_containers){
+		banner.getElementsByTagName("img")[0].src = "media/images/advertisement-mobile.png";
+	}
+}
+function setHorizontalBannerImages(){
+	const banner_containers = document.getElementsByClassName("horizontal-banner");
+	for(let banner of banner_containers){
+		banner.getElementsByTagName("img")[0].src = "media/images/advertisement-small.png";
+	}
+}
+function setVerticalBannerImages(){
+	const banner_containers = document.getElementsByClassName("vertical-banner");
+	for(let banner of banner_containers){
+		banner.getElementsByTagName("img")[0].src = "media/images/advertisement-vertical.png";
+	}
+}
+function setVerticalBannerImagesHorizontal(){
+	const banner_containers = document.getElementsByClassName("vertical-banner");
+	for(let banner of banner_containers){
+		banner.getElementsByTagName("img")[0].src = "media/images/advertisement-small.png";
+	}
+}
+
 /*-------------------------------*/
 /* Media query < 600 px */
 const extra_small_media_query = window.matchMedia("(max-width: 600px)");
@@ -46,9 +71,15 @@ function extrasmallMediaQuery(extra_small_query){
     if (extra_small_query.matches){
         /* Quando si passa sotto i 600 */
         switchClassTag("xsm_set_articles_vertical", "horizontal-article-layout", "vertical-article-layout");
+		setAllBannerImagesMobile();
+		
+		navbar.classList.add("squeeze");
+        pop_menu.classList.add("squeeze");
     }else{
         /* Quando si torna sopra i 600 */
         switchClassTag("xsm_set_articles_vertical", "vertical-article-layout", "horizontal-article-layout");
+		setHorizontalBannerImages();
+		setVerticalBannerImagesHorizontal();
     }
 }
 
@@ -62,11 +93,17 @@ function smallMediaQuery(small_query){
         /* Quando si passa sotto i 768 */
         switchClassTag("sm_set_articles_horizontal", "vertical-article-layout", "horizontal-article-layout inverse-layout" );
         setImagesResolutions("s-res_200x200");
+		setHorizontalBannerImages();
+		setVerticalBannerImagesHorizontal();
+		
+		navbar.classList.add("squeeze");
+        pop_menu.classList.add("squeeze");
     }else{
         /* Quando si torna sopra i 768 */
         switchClassTag("sm_set_articles_horizontal", "horizontal-article-layout inverse-layout", "vertical-article-layout" );
         setImagesResolutions("m-res_500x333");
         setImagesResolutions("m-res_760x507");
+		setVerticalBannerImages();
     }
 }
 
@@ -91,6 +128,7 @@ function mediumMediaQuery(medium_query){
             navbar.classList.remove("squeeze");
             pop_menu.classList.remove("squeeze");
         }
+
     }
 }
 
@@ -140,15 +178,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
     data_text.innerText = weekday[date.getDay()] + ", " + month[date.getMonth()] + " " +date.getDate() + ", " + date.getFullYear();
 
     /* -------------------------------*/
-    /* Load the right query layout */
-    mediumMediaQuery(medium_media_query);
-    smallMediaQuery(small_media_query);
-    extrasmallMediaQuery((extra_small_media_query));
-
-    /* -------------------------------*/
     /* Setup menu click event listener */
     const menu = document.getElementById("menu-icon");
-    menu.addEventListener("click", menuClickCallback)
+    menu.addEventListener("click", menuClickCallback);
+	
+	/* -------------------------------*/
+    /* Load the right query layout */
+	
+	if(extra_small_media_query.matches){
+		setAllBannerImagesMobile();
+		extrasmallMediaQuery((extra_small_media_query));
+	}
+	if(!(extra_small_media_query.matches) && small_media_query.matches){
+		setHorizontalBannerImages();
+		setVerticalBannerImagesHorizontal();
+		smallMediaQuery(small_media_query);
+	}
+	if(!(small_media_query.matches) && medium_media_query.matches){
+		mediumMediaQuery(medium_media_query);
+		setHorizontalBannerImages();
+		setVerticalBannerImages();
+	}
+	if(!medium_media_query.matches){
+		setHorizontalBannerImages();
+		setVerticalBannerImages();
+	}
+	
 });
 
 

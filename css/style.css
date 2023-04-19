@@ -43,16 +43,16 @@ main{
     margin: auto;
 }
 
+
 .banner-container a{
     display: block;
     margin: auto;
 }
 
-@media only screen and (max-width: 768px){
-    .banner-container img{
-        max-height: 400px;
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+    .banner-container.vertical-banner img{
         width: auto;
-        content:url("/media/images/advertisement-small.png");
+    
     }
 }
 
@@ -60,7 +60,6 @@ main{
     .banner-container img{
         max-height: 400px;
         width: auto;
-        content:url("/media/images/advertisement-mobile.png");
 
     }
     .banner-container{
