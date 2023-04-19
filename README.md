@@ -6,7 +6,7 @@ Piccolo riassunto sull'organizzazione dei files e delucidazioni su alcuni punti 
 A livello macroscopico la pagina html è suddivisa nelle classiche 3 parti: header, main e footer.
 
 #### Header
-Contiene la navbar e il menu a comparsa; tutto quello che è definito qua nei css è associato a un positioning fixed.
+Contiene la navbar e il menu a comparsa; tutto quello che è definito qua, nei css è associato a un positioning fixed.
 
 #### Main
 
