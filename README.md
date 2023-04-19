@@ -73,7 +73,7 @@ La classe "sm_set_articles_horizontal" fa invece il contrario ovvero converte gl
 Infine, per far si che gli articoli orizzontali con immagine a destra, trasformati in verticali, si ritrovino l'immagine all'inizio dell'articolo una volta verticalizzati, le image-wrapper dei vertical-article-layout per risoluzioni < 600px hanno la proprietà css "order:-1". In questo modo ogni articolo verticale avrà l'immagine posizionata all'inizio, a prescindere di come questa sia posizionata nel codice html.
 
 ## Layouts
-<img src="" height="200">  
+Breve schema riassuntivo sui layout della pagina
 
 #### Layout Top
 
@@ -118,6 +118,31 @@ Simile al layout B ma in questo caso manca una fase intermedia e sotto ai 768 gl
 | (res>600) | (600>res)|
 | --- | --- |
 | <img src="https://user-images.githubusercontent.com/94845303/233184068-ecdf6268-574f-4d19-a23f-ddfe66addae2.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233184227-a1df615a-ce50-48f2-a65f-891d2c42fe2c.png" height="200"> |
+
+
+#### Layout F
+
+| (res>768) | (768>res>600)| (600>res) |
+| --- | --- | --- |
+| <img src="https://user-images.githubusercontent.com/94845303/233184448-37a663b7-7bb8-46cc-b226-ef67e5508dd0.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233184668-00197e71-8860-4b2e-aab8-cb3fdbd0bfd6.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233184834-e4014e43-f897-4ff0-872d-985e86fb2276.png" height="200"> 
+
+Prevalentemente questo layout è caratterizzato dalla disposizione del banner; la disposizione del layout è caratterizzato nei css mentre l'immagine del banner viene modificata attraverso javascript.
+
+#### Layout G
+
+| (res>768) | (768>res) |
+| --- | --- |
+| <img src="https://user-images.githubusercontent.com/94845303/233185675-640bbb78-4139-4002-a226-2a3b024741c7.png" height="200">  | <img src="https://user-images.githubusercontent.com/94845303/233186037-e215405a-c255-4dc3-915d-a8d1defc8caa.png" height="200">  |
+
+
+
+
+
+
+
+
+
+
 
 
 
