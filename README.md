@@ -103,7 +103,25 @@ In questo layout, nel passaggio da res>768 a res<768, tramite javascript agli ar
 
 Sopra ai 1024 l'articolo di questo layout è caratterizzato solamente dalla classe css "horizontal-article-layout". Quando la risoluzione scende sotto i 1024, assieme a "horizontal-article-layout" si attiva la classe "split" che sovrascrive le proprietà di griglia dell'articolo e fa in modo tale che testo e immagine condividano lo spazio orizzontale equamente.
 
-Quando la risoluzione scende sotto i 600, il layout dell'articolo passa da orizzontale a verticale (tramite javascript e la classe "xms_set_vertical_layout")
+Quando la risoluzione scende sotto i 600, il layout dell'articolo passa da orizzontale a verticale (tramite javascript e la classe "xms_set_vertical_layout").
+
+#### Layout D
+
+| (res>768) | (768>res)|
+| --- | --- |
+| <img src="https://user-images.githubusercontent.com/94845303/233183089-e252d909-5448-4d9d-afec-95481ecbbe47.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233183351-5ff572c3-4e66-472c-a661-e61666bc2c2a.png" height="200"> |
+
+Simile al layout B ma in questo caso manca una fase intermedia e sotto ai 768 gli articoli sono già in colonna. 
+
+#### Layout E
+
+| (res>600) | (600>res)|
+| --- | --- |
+| <img src="https://user-images.githubusercontent.com/94845303/233184068-ecdf6268-574f-4d19-a23f-ddfe66addae2.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233184227-a1df615a-ce50-48f2-a65f-891d2c42fe2c.png" height="200"> |
+
+
+
+
 
 
 
