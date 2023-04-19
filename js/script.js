@@ -160,6 +160,12 @@ function menuClickCallback(){
 
     const pop_menu = document.getElementById("pop-menu");
     pop_menu.classList.toggle("off");
+	
+	const navbar = document.getElementById("navbar");
+	
+	if( navbar.classList.contains("squeeze") && !(pop_menu.classList.contains("squeeze"))){
+		pop_menu.classList.add("squeeze");
+	}
 }
 
 /* -------------------------------*/
