@@ -1,5 +1,7 @@
 # Esercitazione-PPM-Front-End-Gabriele-Nannotti
 
+Piccolo riassunto sull'organizzazione dei files e delucidazioni su alcuni punti chiave.
+
 ## HTML
 Il main della pagina è suddivisa in 7 sezioni; ogni sezione contiene uno o più layout di impaginazione:
 - Page Top: Contiene la testata principale (con relativo layout)
