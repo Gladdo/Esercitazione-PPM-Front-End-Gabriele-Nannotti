@@ -30,12 +30,13 @@ E' diviso in due parti:
  
 ## CSS
 I file css sono organizzati nel seguente modo:
-- style.css: Contiene i css per l'impaginazione generale delle varie sezioni del main, ovvero i css che definiscono le proprietà dei vari layout della pagina.
+- **style.css**: Contiene i css per l'impaginazione generale delle varie sezioni del main, ovvero i css che definiscono le proprietà dei vari layout della pagina.
 Contiene inoltre i css per gli headers delle sezioni (section header) e i css per i banner pubblicitari (NB: Questi ultimi non sono visibili se software come Adblock sono attivi!)
-- style-navbar.css, style-navbar-buttons-container.css: Contengono i css della barra di navigazione fissata in alto nella pagina
-- style-pop-menu.css: Contiene i css relativi alle griglie flex e grid presenti nel menu a scomparsa del navbar.
-- style-footer.css: Contiene i css relativi al footer finale e alla griglia di link infondo alla pagina.
-- style-article-decoration.css, style-article-layout.css: Contengono rispettivamente i css che definiscono le proprietà dei testi che compaiono nella pagina e i css che definiscono come i tag degli articoli si devono distribuire.
+- **style-navbar.css** | **style-navbar-buttons-container.css**: Contengono i css della barra di navigazione fissata in alto nella pagina
+- **style-pop-menu.css**:  
+Contiene i css relativi alle griglie flex e grid presenti nel menu a scomparsa del navbar.
+- **style-footer.css**: Contiene i css relativi al footer finale e alla griglia di link infondo alla pagina.
+- **style-article-decoration.css** | **style-article-layout.css**: Contengono rispettivamente i css che definiscono le proprietà dei testi che compaiono nella pagina e i css che definiscono come i tag degli articoli si devono distribuire.
 
 ## Articoli:
 Nella pagina a cui è stato fatto riferimento esistono diverse varianti di articoli in termini di layout (dove con articolo è da intendere una immagine con associato titolo ed eventuale descrizione), tra cui ad esempio:
