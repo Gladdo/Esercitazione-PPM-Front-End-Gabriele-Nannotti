@@ -93,7 +93,22 @@ Infine, per far si che gli articoli orizzontali con immagine a destra, trasforma
 | --- | --- | --- |
 | <img src="https://user-images.githubusercontent.com/94845303/233179864-4aa764f5-5bdb-47d4-aa91-e9ded924906a.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233180041-252acacd-eb21-48fe-b46d-8c03f5130522.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233180139-20aa050b-6b6a-457c-9f76-ef227f1d2d35.png" height="200"> |
 
-In questo layout, nel passaggio da res>768 a res<768, tramite javascript agli articoli viene sostituito la classe vertical-article-layout con horizontal-article-layout. 
+In questo layout, nel passaggio da res>768 a res<768, tramite javascript agli articoli viene sostituito la classe "vertical-article-layout" con le classi "horizontal-article-layout" e "inverse-layout". Inoltre, sempre tramite javascript, quando si scende sotto i 768 viene modificata la risoluzione dell'immagine per renderla più appropiata alla nuova organizzazione.
+
+#### Layout C
+
+| (res>1024) | (1024>res>600)| (600>res)|
+| --- | --- | --- |
+| <img src="https://user-images.githubusercontent.com/94845303/233181643-139171a6-0f6b-48cd-a814-f3d7b482a4ce.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233181783-8e832b4d-5b74-4fd4-a622-274da7b21e11.png" height="200"> | <img src="https://user-images.githubusercontent.com/94845303/233181997-fe7d3d8c-ff01-4cd1-a8f1-cb322732c65e.png" height="200"> |
+
+Sopra ai 1024 l'articolo di questo layout è caratterizzato solamente dalla classe css "horizontal-article-layout". Quando la risoluzione scende sotto i 1024, assieme a "horizontal-article-layout" si attiva la classe "split" che sovrascrive le proprietà di griglia dell'articolo e fa in modo tale che testo e immagine condividano lo spazio orizzontale equamente.
+
+Quando la risoluzione scende sotto i 600, il layout dell'articolo passa da orizzontale a verticale (tramite javascript e la classe "xms_set_vertical_layout")
+
+
+
+
+
 
 
 
