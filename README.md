@@ -8,9 +8,11 @@ Il main della pagina è suddivisa in 7 sezioni; ogni sezione contiene uno o più
 - Sezione3: Contiene il layout E
 - Sezione4: Contiene il layout F
 - Sezione5: Contiene il layout G
-- Sezione6: Contiene nuovamente il layout B ma con una piccola modifica sul layout degli elementi al suo interno
+- Sezione6: Contiene nuovamente il layout B ma con una piccola modifica degli elementi al suo interno
 
-Ciascuno di questi layout di impaginazione contiene articles a loro volta caratterizzati da diversi layout (gli article possono essere orizzontali o verticali) 
+Ciascun layout è implementato con classi css e definisce come sono distribuiti gli article al suo interno.
+
+A loro volta ogni article definisce come i tag al suo interno si devono distribuire (prevalentemente determina se il suo contenuto è distribuito verticalmente o orizzontalmente attraverso le classi "vertical-article-layout" e "horizontal-article-layout").
 
 ## CSS
 I file css sono organizzati nel seguente modo:
