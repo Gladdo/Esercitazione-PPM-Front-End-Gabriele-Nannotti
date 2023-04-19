@@ -3,6 +3,13 @@
 Piccolo riassunto sull'organizzazione dei files e delucidazioni su alcuni punti chiave.
 
 ## HTML
+A livello macroscopico la pagina html è suddivisa nelle classiche 3 parti: header, main e footer.
+
+#### Header
+Contiene la navbar e il menu a comparsa; tutto quello che è definito qua nei css è associato a un positioning fixed.
+
+#### Main
+
 Il main della pagina è suddivisa in 7 sezioni; ogni sezione contiene uno o più layout di impaginazione:
 - Page Top: Contiene la testata principale (con relativo layout)
 - Sezione1: Contiene il layout A, il layout B e il layout C
@@ -16,6 +23,11 @@ Ciascun layout è implementato con classi css e definisce come sono distribuiti 
 
 A loro volta ogni article definisce come i tag al suo interno si devono distribuire (prevalentemente determina se il suo contenuto è distribuito verticalmente o orizzontalmente attraverso le classi "vertical-article-layout" e "horizontal-article-layout").
 
+#### Footer
+E' diviso in due parti:
+- Una griglia contenente più blocchi a loro volta contenenti liste di links
+- L'effettivo footer della pagina, con link social etc.
+ 
 ## CSS
 I file css sono organizzati nel seguente modo:
 - style.css: Contiene i css per l'impaginazione generale delle varie sezioni del main, ovvero i css che definiscono le proprietà dei vari layout della pagina.
