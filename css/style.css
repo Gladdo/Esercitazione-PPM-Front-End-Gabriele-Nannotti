@@ -23,6 +23,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
 }
 
 .banner-container p{
@@ -45,6 +46,14 @@ main{
 .banner-container a{
     display: block;
     margin: auto;
+}
+
+@media only screen and (max-width: 768px){
+    .banner-container img{
+        max-height: 400px;
+        width: auto;
+        content:url("/media/images/advertisement-small.png");
+    }
 }
 
 @media only screen and (max-width: 600px){
@@ -182,21 +191,7 @@ main{
 
     grid-row-gap: 8px;
     grid-template-columns: 1fr;
-
 }
-
-/*------------------------------------------*/
-/* Griglia orizzontale con due item generici spaziati tra loro*/
-
-.layout-E{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 24px;
-    margin: 15px 20px 0 20px;
-}
-
-/*------------------------------------------*/
-/* Griglia orizzontale con due item: left e right box*/
 
 .layout-A-second-row{
     display: grid;
@@ -215,7 +210,7 @@ main{
 }
 
 /*------------------------------------------*/
-/* Griglia orizzontale di 4 item che diventa una 2x2 a 765 e una colonna per mobile*/
+/* Layout B */
 
 .layout-B{
     margin: 0 20px;
@@ -225,7 +220,16 @@ main{
 }
 
 /*------------------------------------------*/
-/* Griglia orizzontale di 4 item che diventa una colonna sotto 765*/
+/* Layout C */
+
+.layout-C {
+    margin: 24px 20px 0 20px;
+    position: relative;
+    z-index: -1;
+}
+
+/*------------------------------------------*/
+/* Layout D */
 
 .layout-D{
     margin: 0 20px;
@@ -235,12 +239,52 @@ main{
 }
 
 /*------------------------------------------*/
-/* "Griglia" per elementi singoli */
+/* Layout E */
 
-.layout-C {
-    margin: 24px 20px 0 20px;
-    position: relative;
-    z-index: -1;
+.layout-E{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 24px;
+    margin: 15px 20px 0 20px;
+}
+
+/*------------------------------------------*/
+/* Layout F */
+
+.layout-F{
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    margin: 15px 20px;
+}
+
+.layout-F-content{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.layout-F .section-header{
+    margin: 25px 0;
+}
+
+/*------------------------------------------*/
+/* Layout G */
+
+.layout-G{
+    display: grid;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    margin: 15px 20px 0 20px;
+}
+
+.layout-G-block{
+    display: grid;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 /*------------------------------------------*/
@@ -280,9 +324,9 @@ main{
 }
 
 /*------------------------------------------*/
-/* Media query < 765 */
+/* Media query < 768 */
 
-@media only screen and (max-width: 765px){
+@media only screen and (max-width: 768px){
     .layout-A-second-row{
         grid-template-columns: 1fr;
     }
@@ -316,6 +360,15 @@ main{
     .layout-D{
         grid-template-columns: 1fr;
     }
+
+    .layout-F{
+        grid-template-columns: 1fr;
+    }
+
+    .layout-G{
+        grid-template-columns: 1fr;
+    }
+
 }
 
 /*------------------------------------------*/

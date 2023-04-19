@@ -68,6 +68,11 @@
         order: -1;
     }
 
+    .vertical-article-layout .image-wrapper.mobile-keep-margin{
+        margin-right: 0;
+        margin-left: 0;
+    }
+
     .horizontal-article-layout .image-wrapper{
         padding-left: 1.3em;
     }

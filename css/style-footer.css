@@ -176,7 +176,7 @@
 /*------------------------------------------*/
 /* Footer bottom media queries */
 
-@media only screen and (max-width: 765px){
+@media only screen and (max-width: 768px){
     #footer-bottom-flex{
         flex-direction: column-reverse;
         align-items: center;

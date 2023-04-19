@@ -55,15 +55,15 @@ function extrasmallMediaQuery(extra_small_query){
 extra_small_media_query.addEventListener("change", extrasmallMediaQuery);
 
 /*-------------------------------*/
-/* Media query < 765 px */
-const small_media_query = window.matchMedia("(max-width: 765px)");
+/* Media query < 768 px */
+const small_media_query = window.matchMedia("(max-width: 768px)");
 function smallMediaQuery(small_query){
     if (small_query.matches){
-        /* Quando si passa sotto i 765 */
+        /* Quando si passa sotto i 768 */
         switchClassTag("sm_set_articles_horizontal", "vertical-article-layout", "horizontal-article-layout inverse-layout" );
         setImagesResolutions("s-res_200x200");
     }else{
-        /* Quando si torna sopra i 765 */
+        /* Quando si torna sopra i 768 */
         switchClassTag("sm_set_articles_horizontal", "horizontal-article-layout inverse-layout", "vertical-article-layout" );
         setImagesResolutions("m-res_500x333");
         setImagesResolutions("m-res_760x507");

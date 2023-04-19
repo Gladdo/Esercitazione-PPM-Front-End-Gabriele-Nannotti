@@ -131,7 +131,7 @@
     }
 }
 
-@media only screen and (max-width: 765px){
+@media only screen and (max-width: 768px){
     .article-decoration.bottom-separator.sm-enable-border{
         border-bottom-style: solid;
         margin-bottom: 16px;
