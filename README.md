@@ -70,6 +70,6 @@ La classe "sm_set_articles_horizontal" fa invece il contrario ovvero converte gl
 
 (Lo script.js è strutturato in modo tale che sia possibile estendere facilmente questo set di comandi dove necessario)  
 
-Infine, per far si che gli articoli orizzontali con immagine a destra, trasformati in verticali, si ritrovino l'immagine all'inizio dell'articolo una volta trasformati, le image-wrapper dei vertical-article-layout per risoluzioni < 600px hanno la proprietà css "order:-1".
+Infine, per far si che gli articoli orizzontali con immagine a destra, trasformati in verticali, si ritrovino l'immagine all'inizio dell'articolo una volta verticalizzati, le image-wrapper dei vertical-article-layout per risoluzioni < 600px hanno la proprietà css "order:-1". In questo modo ogni articolo verticale avrà l'immagine posizionata all'inizio, a prescindere di come questa sia posizionata nel codice html.
 
 
