@@ -6,7 +6,7 @@ Piccolo riassunto sull'organizzazione dei files e delucidazioni su alcuni punti 
 A livello macroscopico la pagina html è suddivisa nelle classiche 3 parti: header, main e footer.
 
 #### Header
-Contiene la navbar e il menu a comparsa; sia navbar che pop menu hanno positioning fixed. Il resize della navbar avviene attraverso l'aggiunta e la rimozione della classe .squeeze al tag <nav>.
+Contiene la navbar e il menu a comparsa; sia navbar che pop menu hanno positioning fixed. Il resize della navbar avviene attraverso l'aggiunta e la rimozione della classe .squeeze al tag nav.
 
 #### Main
 
