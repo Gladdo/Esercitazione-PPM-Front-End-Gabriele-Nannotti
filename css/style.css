@@ -173,6 +173,17 @@ main{
     text-decoration: none;
 }
 
+.section-header p a:link, .section-header p a:visited, .section-header p a:active{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+.section-header p a:hover{
+	cursor: pointer;
+	color: #007bff;
+	text-decoration: none;
+}
+
 .section-header div img{
     height: 20px;
     cursor: pointer;
