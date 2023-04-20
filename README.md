@@ -53,6 +53,8 @@ A livello di classi css sono concepiti solo due tipi di articoli:
 - articoli orizzontali (associato alla classe css horizontal-article-layout) 
 - articoli verticali (associato alla classe css vertical-article-layout).
 
+Quindi i vari comportamenti (le trasformazioni verticale<->orizzontale alle diverse risoluzioni) sono ottenuti attraverso script javascript.
+
 #### Distinzione tra articoli con layout orizzontale con immagine a destra e immagine a sinistra:
 
 Per distringuere tra articoli orizzontali con immagine a destra e con immagine a sinistra, di default è previsto che un article con classe "horizontal-article-layout" abbia immagine a destra; aggiungendo a tale article la classe "inverse-layout", questa sovrascrive le proprietà di griglia css dell'"horizontal-article-layout" e impagina l'articolo in modo tale che sia conforme con l'immagine a sinistra.
