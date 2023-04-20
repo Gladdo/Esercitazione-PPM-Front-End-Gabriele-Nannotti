@@ -12,7 +12,7 @@ Contiene la navbar e il menu a comparsa; sia navbar che pop menu hanno positioni
 
 #### Main
 
-Il main della pagina è suddivisa in 7 sezioni; ogni sezione contiene uno o più layout di impaginazione:
+Il main della pagina è suddiviso in 7 sezioni; ogni sezione contiene uno o più layout di impaginazione:
 - Page Top: Contiene la testata principale (con relativo layout)
 - Sezione1: Contiene il layout A, il layout B e il layout C
 - Sezione2: Contiene il layout D
